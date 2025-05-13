@@ -14,6 +14,7 @@
   programs.zsh.enable = true;
   initExtra = ''
       git config --global core.sshCommand "/mnt/c/Windows/System32/OpenSSH/ssh.exe"
+      eval "$(direnv hook zsh)"
   '';
 
 }
