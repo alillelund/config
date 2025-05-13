@@ -17,17 +17,15 @@
   environment.systemPackages = with pkgs; [
     # Flakes clones its dependencies through the git command,
     # so git must be installed first
-    direnv
+    # direnv
     eza
     gh
     git
     helix
-#    neovim
     neofetch
     ripgrep
     stow
     thefuck
-#    vim
     wget
   ];
   # Set the default editor to vim
