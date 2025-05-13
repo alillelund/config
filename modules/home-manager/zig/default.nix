@@ -1,0 +1,5 @@
+{
+   programs.zig = {
+     enable = true;
+   };
+}
