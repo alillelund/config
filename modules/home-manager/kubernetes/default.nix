@@ -11,4 +11,6 @@
  programs.k9s = {
    enable = true;
  };
+
+ programs.zsh.oh-my-zsh.plugins = ["kubectl, argocd, oc"];
 }
