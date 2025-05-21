@@ -1,6 +1,6 @@
 {
   imports = [
-    # ./azure-cli
+    ./azure-cli
     ./direnv
     ./kubernetes
     ./zellij

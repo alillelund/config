@@ -1,6 +1,5 @@
 {
   pkgs,
-  k9s-catppuccin,
   ...
 }: {
   home.packages = with pkgs; [
