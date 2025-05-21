@@ -17,12 +17,13 @@
   environment.systemPackages = with pkgs; [
     # Flakes clones its dependencies through the git command,
     # so git must be installed first
-    # direnv
+    (azure-cli.withExtensions [ azure-cli.extensions.aks-preview ])
     eza
     gh
     git
     helix
     neofetch
+    openshift
     ripgrep
     stow
     thefuck

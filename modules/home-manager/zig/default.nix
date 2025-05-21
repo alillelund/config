@@ -1,5 +1,3 @@
-{
-   programs.zig = {
-     enable = true;
-   };
+{pkgs, ...}: {
+    home.packages = with pkgs; [zig];
 }
