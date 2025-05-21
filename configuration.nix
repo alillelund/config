@@ -23,7 +23,6 @@
     git
     helix
     neofetch
-    openshift
     ripgrep
     stow
     thefuck
