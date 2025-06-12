@@ -25,7 +25,6 @@
     neofetch
     ripgrep
     stow
-    thefuck
     wget
   ];
 
