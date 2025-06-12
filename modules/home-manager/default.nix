@@ -1,5 +1,6 @@
 {
   imports = [
+    ./btop
     ./zsh
     ./azure-cli
     ./direnv

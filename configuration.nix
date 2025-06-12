@@ -11,6 +11,7 @@
   wsl.enable = true;
   wsl.defaultUser = "nixos";
 
+
   # Enable the Flakes feature and the accompanying new nix command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.download-buffer-size = 500000000;
@@ -27,6 +28,10 @@
     thefuck
     wget
   ];
+
+  # VSCode Server dependency
+  # programs.nix-ld.enable = true;
+
   # Set the default editor to vim
   environment.variables.EDITOR = "nvim";  
   environment.localBinInPath = true; # add to configuration.nix
