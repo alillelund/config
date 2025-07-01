@@ -12,5 +12,5 @@
    enable = true;
  };
 
- programs.zsh.oh-my-zsh.plugins = ["kubectl, argocd, oc"];
+ programs.zsh.oh-my-zsh.plugins = ["kubectl" "argocd" "oc"];
 }
