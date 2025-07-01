@@ -19,6 +19,7 @@
     # Flakes clones its dependencies through the git command,
     # so git must be installed first
     eza
+    unzip
     gh
     git
     helix
@@ -29,7 +30,7 @@
   ];
 
   # VSCode Server dependency
-  # programs.nix-ld.enable = true;
+  programs.nix-ld.enable = true;
 
   # Set the default editor to vim
   environment.variables.EDITOR = "nvim";  
