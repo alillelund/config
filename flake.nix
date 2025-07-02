@@ -14,6 +14,7 @@
   outputs = { self, nixpkgs, nixos-wsl, home-manager, ... }@inputs:
   let
     system = "x86_64-linux";
+    username = "nixos";
     pkgs = import nixpkgs { 
       inherit system;
       config.allowUnfree = true;
@@ -22,7 +23,7 @@
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs username; };
         modules = [
           ./configuration.nix
           nixos-wsl.nixosModules.wsl
@@ -30,7 +31,8 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-	    home-manager.users.nixos = import ./home.nix;
+      	    home-manager.users."${username}" = import ./home.nix;
+            home-manager.extraSpecialArgs = {inherit pkgs system username;};
           }
         ];
       };

@@ -5,9 +5,10 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ config, lib, pkgs, inputs, ... }:
-
-{
+{ config, lib, pkgs, inputs, ... }:{
+  imports = [
+    ./modules/nixos
+  ];
   wsl.enable = true;
   wsl.defaultUser = "nixos";
 
@@ -48,7 +49,7 @@
 
   # Set timezone
   # services.automatic-timezoned.enable = true;
-  time.timeZone = "Europe/Copenhagen";
+  # time.timeZone = "Europe/Copenhagen";
 
   system.stateVersion = "24.11"; # Did you read the comment?
 }
