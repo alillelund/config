@@ -19,4 +19,5 @@
         theme = "";
      };
   };
+  programs.ghostty.enable = true;
 }
