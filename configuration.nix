@@ -24,13 +24,14 @@
     unzip
     gh
     git
-    helix
     llama-cpp
     neofetch
     ripgrep
-    stow
     wget
   ];
+
+  # Enable SSH-Agent
+  programs.ssh.startAgent = true;
 
   # VSCode Server dependency
   programs.nix-ld.enable = true;
