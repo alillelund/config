@@ -3,5 +3,6 @@
     neovim
     nixd
     pre-commit
+    yazi
   ];
 }
