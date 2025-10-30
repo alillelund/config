@@ -4,7 +4,7 @@
 }: {
   home.packages = with pkgs; [
     kubectl
-    argo
+    argo-workflows
     openshift
   ];
 
