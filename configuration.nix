@@ -20,13 +20,13 @@
     # Flakes clones its dependencies through the git command,
     # so git must be installed first
     eza
-    jq
-    unzip
     gh
     git
-    llama-cpp
+    lsof
+    jq
     neofetch
     ripgrep
+    unzip
     wget
   ];
 
