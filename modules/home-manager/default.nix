@@ -2,13 +2,15 @@
   imports = [
     ./apps
     ./btop
-    ./zsh
-    ./azure-cli
     ./direnv
-    ./kubernetes
-    ./sops
-    ./zellij
-    ./zig
+    ./ghostty
+    ./helix
+    #./hyprland
+    # ./plasma
     ./starship
+    ./tmux
+    #./walker
+    ./yazi
+    ./zsh
   ];
 }

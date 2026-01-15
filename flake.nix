@@ -1,8 +1,17 @@
 {
-  description = "A simple NixOS flake";
+  description = "A nix-config across gaming machine and WSL work machine.";
+
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixos-wsl.url = "github:nix-community/nixos-wsl";
+    # NixOS official package source, using the nixos-25.05 branch here
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+
+    hyprland.url = "github:hyprwm/Hyprland";
+    swww.url = "github:LGFae/swww";
+    elephant.url = "github:abenz1267/elephant";
+    walker = {
+      url = "github:abenz1267/walker";
+      inputs.elephant.follows = "elephant";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -10,32 +19,29 @@
     };
   };
 
-
-  outputs = { self, nixpkgs, nixos-wsl, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
   let
     system = "x86_64-linux";
-    username = "nixos";
     pkgs = import nixpkgs { 
       inherit system;
       config.allowUnfree = true;
     };
-  in {
-    nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs username; };
-        modules = [
-          ./configuration.nix
-          nixos-wsl.nixosModules.wsl
-          home-manager.nixosModules.default
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-      	    home-manager.users."${username}" = import ./home.nix;
-            home-manager.extraSpecialArgs = {inherit pkgs system username;};
-          }
-        ];
+    in {
+    nixosConfigurations.nixos-3950x = nixpkgs.lib.nixosSystem {
+      inherit system;
+      specialArgs = {
+        inherit inputs;
+        hostname = "nixos-3950x";
       };
+      modules = [
+        ./configuration.nix
+        home-manager.nixosModules.default
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+      	  home-manager.users.aml = import ./home.nix;
+        }
+      ];
     };
     homeConfigurations."nixos@nixos" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;

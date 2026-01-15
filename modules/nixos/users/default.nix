@@ -1,25 +1,24 @@
-{
-  pkgs,
-  username,
-  ssh-keys,
-  ...
-}: {
-  users.users."${username}" = {
+{pkgs, ... }: {
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.aml = {
     isNormalUser = true;
-    extraGroups = ["wheel"];
+    description = "Alexander Marcus Lillelund";
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirt" "kvm"];
     shell = pkgs.zsh;
-    openssh.authorizedKeys.keyFiles = [
-      /home/nixos/.ssh/id_ed25519
-    ];
-
+    # packages = with pkgs; [
+    #   kdePackages.kate
+    # #  thunderbird
+    # ];
   };
 
-  users.defaultUserShell = pkgs.zsh;
-  programs.zsh = {
-    enable = true;
-    shellInit = ''
-        git config --global core.sshCommand "/mnt/c/Windows/System32/OpenSSH/ssh.exe"
-    '';
-  };
 
+  environment.systemPackages = [
+    pkgs.xkb-switch
+  ];
+
+  programs.zsh.enable = true;
+
+  # Enable automatic login for the user.
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "aml";
 }
