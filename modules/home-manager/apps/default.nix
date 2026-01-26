@@ -43,5 +43,6 @@
     wofi-power-menu
     xorg.xhost
     yazi
+    zathura
   ];
 }

@@ -2,7 +2,7 @@
   imports = [
     ./audio
     ./bootloader
-    ./desktop
+    # ./desktop
     ./fonts
     ./games
     ./i18n
