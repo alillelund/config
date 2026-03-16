@@ -80,6 +80,7 @@
     waybar
     hyprsunset
     hyprpaper
+    hyprlock
     mako # Notification agent
     swayosd # Notification OSD for caps lock and volume
     wl-clipboard # Wayland clipboard
