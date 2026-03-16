@@ -28,6 +28,7 @@
     neofetch
     neovim
     nixd
+    obsidian
     p7zip
     pandoc
     qemu
@@ -36,6 +37,7 @@
     signal-desktop
     telegram-desktop
     texliveTeTeX
+    tutanota-desktop
     virt-manager
     waybar
     wget

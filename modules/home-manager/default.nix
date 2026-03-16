@@ -3,10 +3,10 @@
     ./apps
     ./btop
     ./direnv
-    ./ghostty
+    # ./ghostty
     ./helix
+    ./kitty
     #./hyprland
-    # ./plasma
     ./starship
     ./tmux
     #./walker

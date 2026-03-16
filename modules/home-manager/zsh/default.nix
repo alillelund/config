@@ -16,5 +16,12 @@
         enable = true;
         plugins = ["git"];
      };
+
+    initContent = ''
+      # Auto-start Hyprland with uwsm on TTY1
+      if uwsm check may-start && uwsm select; then
+        exec uwsm start default
+      fi
+    '';
   };
 }
