@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       # Theme/color scheme
-      # include = "gruvbox-dark-hard.conf";
+      include = "Gruvbox Dark Hard.conf";
 
       # Font configuration
       font_family = "Maple Mono";
