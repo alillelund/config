@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     neovim
     nixd
-    yazi
+    # yazi
     wslu # Collection of utilities for Windows Subsystem for Linux
   ];
 }

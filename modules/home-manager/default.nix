@@ -10,5 +10,6 @@
     ./zellij
     ./zig
     ./starship
+    ./yazi
   ];
 }
